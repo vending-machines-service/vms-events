@@ -3,7 +3,7 @@ package vms.vmsevents.service;
 import java.time.LocalDate;
 import java.util.List;
 
-import vms.vmsevents.dto.MTRecordCurrentDTO;
+
 import vms.vmsevents.dto.OperationStatusEnum;
 import vms.vmsevents.dto.RecordArchiveDTO;
 import vms.vmsevents.dto.RecordCurrentDTO;
@@ -12,28 +12,25 @@ import vms.vmsevents.dto.RecordCurrentDTO;
 
 public interface IRecords {
 
-  public List<RecordCurrentDTO> getCurrentAllRecord();
-
-  public MTRecordCurrentDTO getCurrentMTRecord(String recordId);
+  public RecordCurrentDTO getCurrentMTRecord(String recordId);
 
   public RecordCurrentDTO getCurrentMFRecord(String recordId);
+  
+  public List<RecordCurrentDTO> getAllCurrentRecord();
 
-  public List<RecordCurrentDTO> getCurrentMalFunctionRecord();
+  public List<RecordArchiveDTO> getArchiveMalFunctionRecord(LocalDate from, LocalDate to);
 
-  public List<MTRecordCurrentDTO> getCurrentMaintenanceRecord();
+  public List<RecordArchiveDTO> getArchiveMaintenanceRecord(LocalDate from, LocalDate to);
 
-  public List<RecordCurrentDTO> getArchiveMalFunctionRecord();
+  public List<RecordArchiveDTO> getAllArchiveRecord(LocalDate from, LocalDate to);
 
-  public List<MTRecordCurrentDTO> getArchiveMaintenanceRecord();
+  public List<RecordCurrentDTO> getCurrentRecordsByMachine(int machineId);
 
-  public RecordArchiveDTO getArchiveRecord(int recordId);
-
-  public List<RecordCurrentDTO> getCurrentRecordsByMachine(int machineId, int from, int to);
-
-  public OperationStatusEnum completeRecord(String id, String comment);
-
-  public List<RecordArchiveDTO> getArchiveRecords(LocalDate since, LocalDate until);
-
-  public OperationStatusEnum assignTechnician(int recordId, int workerId);
+  public OperationStatusEnum completeRecord(int machineId, String comment);
+  
+  public OperationStatusEnum assignTechnicianMF(String recordId, int workerId);
+  
+  public OperationStatusEnum assignTechnicianMT(String recordId, int workerId);
+ 
 
 }

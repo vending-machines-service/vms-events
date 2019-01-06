@@ -12,7 +12,7 @@
 	<artifactId>vms-events</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>vms-events</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Events service</description>
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -44,7 +44,8 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
-
+		
+		
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
