@@ -83,10 +83,11 @@ public class RecordsController {
 		return records.getCurrentRecordsByMachine(machineId);
 	}
 	
-//	@PostMapping(ApiConstants.COMPLETE_RECORD)
-//	public OperationStatusEnum completeRecord(@RequestBody CompleteRecord complete) {
-//		return records.completeRecord(complete.getRecordId(), complete.getComment(), complete.getType());
-//	}
+	@PostMapping(ApiConstants.COMPLETE_RECORD)
+	public OperationStatusEnum completeRecord(@RequestBody CompleteRecord complete) {
+	
+		return records.completeRecord(complete.getMachineId(), complete.getComment());
+	}
 	
 	@GetMapping(ApiConstants.ASSIGN_TECHNICIAN_MF_CURRENT + "/{recordId}&{workerId}")
 	public OperationStatusEnum assignTechnicianMF(@PathVariable("recordId") String recordId, 

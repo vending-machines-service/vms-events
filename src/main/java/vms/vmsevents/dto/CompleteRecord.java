@@ -9,15 +9,15 @@ import lombok.ToString;
 @Getter @Setter @NoArgsConstructor @ToString @EqualsAndHashCode
 public class CompleteRecord {
 	
-	String recordId;
+	int machineId;
 	String comment;
-	OperationStatusEnum type;
 	
-	public CompleteRecord(String recordId, String comment, OperationStatusEnum type) {
+	
+	
+	public CompleteRecord(int machineId, String comment) {
 		super();
-		this.recordId = recordId;
+		this.machineId = machineId;
 		this.comment = comment;
-		this.type = type;
 	}
 	
 }

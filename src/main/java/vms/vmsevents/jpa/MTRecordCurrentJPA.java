@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import vms.vmsevents.dto.OperationStatusEnum;
-import vms.vmsevents.dto.PersistanceConstants;
 import vms.vmsevents.dto.RecordCurrentDTO;
 
 
@@ -23,7 +22,7 @@ import vms.vmsevents.dto.RecordCurrentDTO;
 
 @Getter @Setter @NoArgsConstructor @ToString @EqualsAndHashCode
 @Entity
-@Table(name = PersistanceConstants.CURRENT_MAINTANANCE_RECORDS_TABLE)
+@Table(name = "current_mulfunction")
 public class MTRecordCurrentJPA {
 	
 	@Id
