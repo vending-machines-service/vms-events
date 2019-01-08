@@ -7,36 +7,34 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
-
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 import vms.vmsevents.dto.OperationStatusEnum;
+import vms.vmsevents.dto.PersistanceConstants;
 import vms.vmsevents.dto.RecordCurrentDTO;
 
-
-
-
-@Getter @Setter @NoArgsConstructor @ToString @EqualsAndHashCode
+@Getter
+@Setter
+@NoArgsConstructor
+@ToString
+@EqualsAndHashCode
 @Entity
-@Table(name = "current_mulfunction")
+@Table(name = PersistanceConstants.CURRENT_MAINTANANCE_RECORDS_TABLE)
 public class MTRecordCurrentJPA {
-	
+
 	@Id
 	String id;
-	@Column(name="date_open")
+	@Column(name = "date_open")
 	LocalDate dateOpen;
-	@Column(name="machine_id")
+	@Column(name = "machine_id")
 	int machineId;
-	@Column(name="sensor_id")
+	@Column(name = "sensor_id")
 	int sensorId;
-	@Column(name="user_id")
+	@Column(name = "user_id")
 	int userId;
-	
-
 
 	public MTRecordCurrentJPA(int machineId, int sensorId) {
 		super();
@@ -46,11 +44,9 @@ public class MTRecordCurrentJPA {
 		this.sensorId = sensorId;
 		this.userId = 0;
 	}
-	
+
 	public RecordCurrentDTO convertJPAtoDTO() {
 		return new RecordCurrentDTO(OperationStatusEnum.MAINTENANCE, id, dateOpen, userId);
 	}
-
-	
 
 }

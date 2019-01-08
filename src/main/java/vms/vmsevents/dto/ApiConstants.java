@@ -2,7 +2,7 @@ package vms.vmsevents.dto;
 
 public interface ApiConstants {
 
-  String RECORD = "record";
+  String RECORD = "";
   String GET_MF_RECORD_CURRENT = "/current/malfunction"; // GET
   String GET_MT_RECORD_CURRENT = "/current/maintenance"; // GET
   String GET_ALL_CURRENT_RECORDS = "/current/all"; //GET
