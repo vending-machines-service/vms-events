@@ -105,9 +105,9 @@ public class RecordsService implements IRecords {
 	@Transactional
 	public OperationStatusEnum completeRecord(int machineId, String comment) {
 		RestTemplate rest = new RestTemplate();
-		String url = "http://localhost:5000/complete/" + machineId;
+		String url = "http://localhost:8080/source/complete/" + machineId;
 //		String url = "http://localhost:8080/user/test/complete/" + machineId;
-		// rest.exchange(url, HttpMethod.GET, null, Boolean.class);
+		rest.exchange(url, HttpMethod.GET, null, Boolean.class);
 		
 		completeMalfunctionRecord(machineId, comment);
 		completeMaintenanceRecord(machineId, comment);

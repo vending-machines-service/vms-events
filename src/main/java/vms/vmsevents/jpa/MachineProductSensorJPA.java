@@ -1,9 +1,9 @@
 package vms.vmsevents.jpa;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.EqualsAndHashCode;
@@ -23,21 +23,29 @@ public class MachineProductSensorJPA {
 
   @Id
   @GeneratedValue
-  String id;
+  int id;
 
-  @ManyToOne
-  @JoinColumn(name = "machine_id")
-  MachineJPA machine;
+  @Column(name = "machine_id")
+  int machineId;
 
-  @ManyToOne
-  @JoinColumn(name = "product_name")
-  ProductJPA product;
+  // @ManyToOne
+  // @JoinColumn(name = "product_id")
+  // ProductJPA product;
+  @Column(name = "product_id")
+  int productId;
 
+  @Column(name = "sensor_id")
   int sensorId;
 
-  public MachineProductSensorJPA(MachineJPA machine, ProductJPA product, int sensorId) {
-    this.machine = machine;
-    this.product = product;
+  @Column(name = "product_name")
+  String productName;
+
+  public MachineProductSensorJPA(int machineId, int sensorId, int productId, String productName) {
+    super();
+    this.machineId = machineId;
+    this.productId = productId;
     this.sensorId = sensorId;
+    this.productName = productName;
   }
+
 }

@@ -31,8 +31,8 @@ public class MachineJPA {
 
   public String location;
 
-  @OneToMany(mappedBy = "machine")
-  Set<MachineProductSensorJPA> products;
+  // @OneToMany(mappedBy = "machine")
+  // Set<MachineProductSensorJPA> products;
 
   public MachineJPA(int machineId, String firmName, String location) {
     super();
