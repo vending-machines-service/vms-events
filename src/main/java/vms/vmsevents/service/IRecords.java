@@ -3,7 +3,7 @@ package vms.vmsevents.service;
 import java.time.LocalDate;
 import java.util.List;
 
-
+import vms.vmsevents.dto.CompleteRecord;
 import vms.vmsevents.dto.OperationStatusEnum;
 import vms.vmsevents.dto.RecordArchiveDTO;
 import vms.vmsevents.dto.RecordCurrentDTO;
@@ -26,7 +26,7 @@ public interface IRecords {
 
   public List<RecordCurrentDTO> getCurrentRecordsByMachine(int machineId);
 
-  public OperationStatusEnum completeRecord(int machineId, String comment);
+  public OperationStatusEnum completeRecord(CompleteRecord complete);
   
   public OperationStatusEnum assignTechnicianMF(String recordId, int workerId);
   

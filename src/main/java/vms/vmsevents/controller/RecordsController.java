@@ -84,7 +84,7 @@ public class RecordsController {
 	@PostMapping(ApiConstants.COMPLETE_RECORD)
 	public OperationStatusEnum completeRecord(@RequestBody CompleteRecord complete) {
 
-		return records.completeRecord(complete.getMachineId(), complete.getComment());
+		return records.completeRecord(complete);
 	}
 
 	@GetMapping(ApiConstants.ASSIGN_TECHNICIAN_MF_CURRENT + "/{recordId}&{workerId}")

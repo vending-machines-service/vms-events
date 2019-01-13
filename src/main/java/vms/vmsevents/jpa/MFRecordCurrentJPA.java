@@ -51,7 +51,7 @@ public class MFRecordCurrentJPA {
 	
 public RecordCurrentDTO convertJPAtoDTO() {
 		
-		return new RecordCurrentDTO(OperationStatusEnum.MAINTENANCE, id, dateOpen, userId);
+		return new RecordCurrentDTO(OperationStatusEnum.MALFUNCTION, id, dateOpen, userId);
 	}
 
 	

@@ -11,13 +11,15 @@ public class CompleteRecord {
 	
 	int machineId;
 	String comment;
+	int userId;
 	
 	
 	
-	public CompleteRecord(int machineId, String comment) {
+	public CompleteRecord(int machineId, String comment, int userId) {
 		super();
 		this.machineId = machineId;
 		this.comment = comment;
+		this.userId = userId;
 	}
 	
 }
